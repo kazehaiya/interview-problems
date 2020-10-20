@@ -1,5 +1,6 @@
 /**
  * 实现 bind 函数
+ * 要求：能够完全模拟原生 bind 的特性
  */
 (function () {
   Function.prototype.myBind = function (...args) {
