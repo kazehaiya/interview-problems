@@ -11,6 +11,11 @@
     // 原函数参数
     const originArgs = args.slice(1);
 
+    // 验证 this 是否存在
+    if (typeof self !== 'function') {
+      throw new TypeError('The target you bind must be a function!');
+    }
+
     // 返回一个新函数
     return function (...newArgs) {
       return self.apply(context, [...originArgs, ...newArgs]);
